@@ -1,5 +1,6 @@
 /* Database schema to keep the structure of entire database. */
 
+-- Create table
 CREATE TABLE animals (
     id                  INT GENERATED ALWAYS AS IDENTITY,
     name                VARCHAR(100),
@@ -9,3 +10,7 @@ CREATE TABLE animals (
     weight_kg           FLOAT,
     PRIMARY KEY(id)
 );
+
+-- Alter table
+ALTER TABLE animals
+ADD species VARCHAR(100);
