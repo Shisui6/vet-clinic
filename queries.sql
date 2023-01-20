@@ -152,6 +152,14 @@ INNER JOIN visits ON visits.animal_id = animals.id
 GROUP BY animals.id, animals.name
 ORDER BY COUNT(date_of_visit) DESC;
 
+SELECT vet_id, animal_id, vets.name, animals.name, date_of_visit
+FROM visits
+INNER JOIN vets ON vets.id = visits.vet_id
+INNER JOIN animals ON animals.id = visits.animal_id
+WHERE vet_id = (SELECT id FROM vets WHERE name = 'Maisy Smith')
+ORDER BY date_of_visit
+LIMIT 1;
+
 SELECT vet_id, vets.name AS vet_name, date_of_visit, animals.id AS animal_id, animals.name AS animal_name
 FROM visits
 INNER JOIN vets ON vets.id = visits.vet_id
