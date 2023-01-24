@@ -57,10 +57,13 @@ CREATE TABLE specializations (
 );
 
 CREATE TABLE visits (
+    id                  SERIAL PRIMARY KEY,
     animal_id           INT,
     vet_id              INT,
     date_of_visit       DATE,
     FOREIGN KEY (animal_id) REFERENCES animals(id),
-    FOREIGN KEY (vet_id) REFERENCES vets(id),
-    PRIMARY KEY (animal_id, vet_id, date_of_visit)
+    FOREIGN KEY (vet_id) REFERENCES vets(id)
 );
+
+-- Indexes
+CREATE INDEX animal_id_index ON visits(animal_id DESC);
