@@ -23,6 +23,7 @@
 # 📖 Vet Clinic <a name="about-project"></a>
 
 **Vet Clinic** is an application that stores information on different animals in a database
+![image](https://user-images.githubusercontent.com/37116322/214384871-4858c459-01cd-4fff-bb53-49329651be8f.png)
 
 ## 🛠 Built With <a name="built-with"></a>
 
